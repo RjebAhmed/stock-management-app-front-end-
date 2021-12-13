@@ -1,0 +1,67 @@
+<form style="width: 250px">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">description</label>
+    <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="description"
+      name="description"
+    />
+    <div id="emailHelp" class="form-text"></div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">prixAchat</label>
+    <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="prixAchat"
+      name="prixAchat"
+    />
+    <div id="emailHelp" class="form-text"></div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">prixVente</label>
+    <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="prixVente"
+      name="prixVente"
+    />
+    <div id="emailHelp" class="form-text"></div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label"
+      >dateEnregistrement</label
+    >
+    <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="dateEnregistrement"
+      name="dateEnregistrement"
+    />
+    <div id="emailHelp" class="form-text"></div>
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">quantiteStock</label>
+    <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="quantiteStock"
+      name="quantiteStock"
+    />
+    <div id="emailHelp" class="form-text"></div>
+  </div>
+  <label for="exampleInputEmail1" class="form-label">magasin</label>
+
+  <select name="selectedValue" (change)="selectOption($event.target)"
+  [(ngModel)]="selected"  style="margin-bottom: 20px;" class="form-select" aria-label="Default select example">
+    <option  [value]="mag.id"  *ngFor="let mag of magasins" >{{mag.nom}}</option>
+ 
+  </select>
+  <button (click)="addProduit()" type="submit" class="btn btn-primary">
+    Ajouter
+  </button>
+  <button type="button" class="btn btn-light" (click)="onClose()">close</button>
+
+</form>
